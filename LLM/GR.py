@@ -70,11 +70,3 @@ class GetResponses:
             verbose=True
         )
         return qa_chain
-    
-    def get_response(self, chat_history, question):
-        GR=GetResponses()
-        qa_chain=GR.transform()
-        result = qa_chain({"username": "user", "question": question, "chat_history": chat_history})
-        answer = result["answer"]
-        answer = answer.replace('\n', '').replace("'", "\\'")
-        return answer
