@@ -29,6 +29,9 @@ if user_query is not None and user_query != "":
     with st.chat_message("AI"):
         GR=GetResponses()
         qa_chain=GR.transform()
-        response = st.write_stream(qa_chain(user_query, st.session_state.chat_history))
-
-    st.session_state.chat_history.append(AIMessage(content=response))
+        result = qa_chain({"username": "user", "question": user_query, "chat_history": st.session_state.chat_history})
+        answer = result["answer"]
+        answer = answer.replace('\n', '').replace("'", "\\'")
+        response = st.write(answer)
+    if response != None:
+        st.session_state.chat_history.append(AIMessage(content=response))

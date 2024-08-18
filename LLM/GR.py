@@ -32,7 +32,7 @@ class GetResponses:
         azure_emb_api_key = os.getenv("azure_emb_api_key")
         azure_emb_endpoint = os.getenv("azure_emb_endpoint")
         api_emb_version = os.getenv("api_emb_version")
-        embeddings_model_name = "text-embedding-ada-002"  
+        embeddings_model_name = os.getenv("embeddings_model_name")  
 
         # Initialize the Azure OpenAI Embeddings service
         azure_embedding_service = AzureOpenAIEmbeddings(
@@ -74,7 +74,7 @@ class GetResponses:
     def get_response(self, chat_history, question):
         GR=GetResponses()
         qa_chain=GR.transform()
-        result = qa_chain({"question": question, "chat_history": chat_history})
+        result = qa_chain({"username": "user", "question": question, "chat_history": chat_history})
         answer = result["answer"]
         answer = answer.replace('\n', '').replace("'", "\\'")
         return answer
