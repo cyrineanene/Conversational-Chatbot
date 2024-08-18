@@ -9,7 +9,7 @@ import time
 
 class Chunker:
     #Step 1: Initializing the variables
-    def __init__(self, chunk_size=200, chuck_overlap = 20, directory_path = "data_test/", output_folder= "data_output/" ):
+    def __init__(self, chunk_size=200, chuck_overlap = 20, directory_path = "data_input/", output_folder= "data_output/" ):
         self.chunk_size = chunk_size
         self.chuck_overlap = chuck_overlap
         self.directory_path = directory_path

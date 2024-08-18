@@ -1,3 +1,5 @@
 .venv/
 data_input/
 data_output/
+.env
+__pycache__/
