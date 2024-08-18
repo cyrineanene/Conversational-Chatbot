@@ -1,0 +1,14 @@
+pinecone-client
+langchain
+openai
+tiktoken
+langchain_community
+langchain-openai
+langchain-pinecone
+streamlit
+streamlit-chat
+requests
+python-dotenv
+unstructured
+markdown
+llama-index-vector-stores-pinecone
